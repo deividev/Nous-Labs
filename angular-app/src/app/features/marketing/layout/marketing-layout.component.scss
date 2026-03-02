@@ -1,0 +1,41 @@
+.marketing-shell {
+  color: var(--text-primary);
+}
+
+:host ::ng-deep .p-button {
+  border-radius: 0.7rem;
+  font-weight: 600;
+}
+
+:host ::ng-deep .btn-primary-solid .p-button,
+:host ::ng-deep .p-button:not(.p-button-secondary):not(.p-button-text):not(.p-button-outlined):not(.p-button-contrast) {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 80%, #fff 20%), color-mix(in srgb, var(--secondary) 70%, #fff 30%));
+  border-color: color-mix(in srgb, var(--primary) 60%, transparent);
+  color: #ffffff;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+:host ::ng-deep .btn-secondary-glass .p-button,
+:host ::ng-deep .p-button.p-button-secondary {
+  background: color-mix(in srgb, #ffffff 10%, transparent);
+  border-color: color-mix(in srgb, #ffffff 35%, transparent);
+  color: color-mix(in srgb, #ffffff 92%, var(--text-primary) 8%);
+}
+
+:host ::ng-deep .p-card {
+  background: color-mix(in srgb, var(--surface) 86%, #0f172a 14%);
+  border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+:host ::ng-deep .p-accordionpanel,
+:host ::ng-deep .p-accordionheader,
+:host ::ng-deep .p-accordioncontent-content {
+  background: color-mix(in srgb, var(--surface) 90%, #0b1020 10%);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--primary) 22%, transparent);
+}
+
+:host ::ng-deep .p-accordionheader:hover {
+  background: color-mix(in srgb, var(--primary) 16%, var(--surface));
+}

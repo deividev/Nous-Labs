@@ -8,8 +8,9 @@ import { SiteFooterComponent } from '../components/site-footer/site-footer.compo
   imports: [RouterOutlet, SiteHeaderComponent, SiteFooterComponent],
   template: `
     <app-site-header />
-    <main><router-outlet /></main>
+    <main class="marketing-shell"><router-outlet /></main>
     <app-site-footer />
   `,
+  styleUrl: './marketing-layout.component.scss',
 })
 export class MarketingLayoutComponent {}
