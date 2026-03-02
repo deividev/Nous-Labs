@@ -35,7 +35,7 @@ import type {
  * 🎯 TEMA POR DEFECTO DEL PROYECTO
  * Cambia este valor para aplicar un tema diferente al iniciar la app
  */
-export const DEFAULT_THEME: ThemeName = 'blue';
+export const DEFAULT_THEME: ThemeName = 'dark-purple';
 
 // ============================================================================
 // RE-EXPORTACIONES
