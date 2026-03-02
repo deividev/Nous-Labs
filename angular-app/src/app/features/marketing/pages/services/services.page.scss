@@ -2,3 +2,18 @@
   margin-top: var(--space-12);
   padding-bottom: var(--space-16);
 }
+
+.services-list h2,
+.services-list h3 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.services-list h3 {
+  margin-top: var(--space-8);
+  opacity: 0.9;
+}
+
+.muted-grid {
+  opacity: 0.78;
+}

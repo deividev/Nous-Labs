@@ -33,43 +33,48 @@ export const CONTACT_CONFIG: ContactConfig = {
 
 export const SERVICES: ServiceItem[] = [
   {
-    title: 'Asistente IA Operativo (Servicio D)',
-    description: 'Implantación operativa para agenda, correo y documentación con IA aplicada.',
+    title: 'Asistente IA Operativo — Nivel Entry',
+    description:
+      'Servicio activo en esta fase: implantación operativa para agenda, correo y documentación con IA aplicada.',
     route: '/servicios/asistente-ia-operativo',
+  },
+];
+
+export const FUTURE_SERVICES: ServiceItem[] = [
+  {
+    title: 'Asistente IA Operativo — Nivel Core',
+    description: 'Nivel avanzado en preparación (no disponible todavía).',
+    comingSoon: true,
+  },
+  {
+    title: 'Asistente IA Operativo — Nivel Pro',
+    description: 'Nivel premium en preparación (no disponible todavía).',
+    comingSoon: true,
   },
   {
     title: 'Desarrollo de Software a medida',
-    description: 'Plataformas y productos digitales para procesos de negocio críticos.',
+    description: 'Servicio futuro en definición de alcance y precios.',
     comingSoon: true,
   },
   {
     title: 'Automatizaciones IA',
-    description: 'Automatización de operaciones repetitivas con foco en tiempo y calidad.',
+    description: 'Servicio futuro en definición de alcance y precios.',
     comingSoon: true,
   },
 ];
 
 export const PRICING_TIERS: PricingTier[] = [
   {
-    name: 'D-Entry',
-    price: '490€',
-    description: 'Arranque guiado con configuración base.',
-    features: ['Setup inicial', 'Flujo mínimo operativo', 'Checklist de handover'],
+    name: 'D-Entry (Activo)',
+    price: '299€ - 490€',
+    description: 'Arranque guiado con configuración base y entrega usable en días.',
+    features: [
+      'Setup inicial',
+      'Flujo mínimo operativo',
+      'Checklist de handover',
+      'Guía de uso para empezar desde el día 1',
+    ],
     ctaLabel: 'Solicitar D-Entry',
-  },
-  {
-    name: 'D-Core',
-    price: '1.250€',
-    description: 'Implementación completa para operación diaria estable.',
-    features: ['Agenda y correo operativos', 'Documentación base', 'Onboarding y validación'],
-    ctaLabel: 'Solicitar D-Core',
-  },
-  {
-    name: 'D-Pro',
-    price: '2.400€',
-    description: 'Capa avanzada con optimización y soporte extendido.',
-    features: ['Todo lo de Core', 'Playbooks avanzados', 'Optimización y seguimiento'],
-    ctaLabel: 'Solicitar D-Pro',
   },
 ];
 
@@ -84,7 +89,7 @@ export const SERVICE_D_FAQ: FaqItem[] = [
   },
   {
     question: '¿Incluye soporte posterior?',
-    answer: 'Sí, cada nivel incluye una ventana de soporte para ajustes y dudas tras el handover.',
+    answer: 'Sí, D-Entry incluye una ventana inicial de soporte para ajustes y dudas tras el handover.',
   },
   {
     question: '¿Cómo se protege la información?',

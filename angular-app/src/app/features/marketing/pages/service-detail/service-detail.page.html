@@ -1,17 +1,20 @@
 <app-hero
-  title="Asistente IA Operativo para organizar tu negocio en días"
-  subtitle="Agenda, correo y documentación con una operativa clara y usable"
-  primaryLabel="Solicitar implementación"
+  title="Asistente IA Operativo — Nivel Entry"
+  subtitle="Implementación inicial para ordenar agenda, correo y documentación sin complejidad técnica."
+  primaryLabel="Solicitar diagnóstico Entry"
   primaryRoute="/contacto"
 />
 
 <section class="container section-grid">
-  <h2>Niveles del servicio</h2>
+  <h2>Servicio activo (v1): Nivel Entry</h2>
   <div class="cards-grid">
     @for (tier of tiers; track tier.name) {
       <app-pricing-tier-card [tier]="tier" (selected)="goToContact($event)" />
     }
   </div>
+  <p class="roadmap-note">
+    Core y Pro se lanzarán más adelante cuando estén cerrados alcance, entregables y precios.
+  </p>
 </section>
 
 <section class="container section-grid">

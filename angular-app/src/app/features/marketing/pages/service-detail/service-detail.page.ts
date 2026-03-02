@@ -11,6 +11,7 @@ import { CONTACT_CONFIG, PRICING_TIERS, SERVICE_D_FAQ } from '../../config/marke
   selector: 'app-service-detail-page',
   imports: [HeroComponent, PricingTierCardComponent, ProcessStepsComponent, FaqAccordionComponent, WhatsappCtaComponent],
   templateUrl: './service-detail.page.html',
+  styleUrl: './service-detail.page.scss',
 })
 export class ServiceDetailPage {
   readonly tiers = PRICING_TIERS;

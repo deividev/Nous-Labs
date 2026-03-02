@@ -17,7 +17,7 @@ import { CONTACT_CONFIG, SERVICE_D_FAQ, SERVICES } from '../../config/marketing-
 export class HomePage {
   readonly services = SERVICES;
   readonly faq = SERVICE_D_FAQ.slice(0, 3);
-  readonly process = ['Diagnóstico', 'Implementación', 'Operación', 'Optimización'];
-  readonly heroStats = ['Angular 21', 'PrimeNG UI', 'Automatización IA', 'Setup en días'];
+  readonly process = ['Diagnóstico', 'Implementación Entry', 'Validación', 'Handover'];
+  readonly heroStats = ['Servicio activo: Entry', 'Setup en 3-5 días', 'WhatsApp + Email', 'Sin complejidad técnica'];
   readonly contactConfig = CONTACT_CONFIG;
 }
