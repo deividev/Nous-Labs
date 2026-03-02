@@ -13,6 +13,20 @@
   border-color: color-mix(in srgb, var(--primary) 60%, transparent);
   color: #ffffff;
   box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 30%, transparent);
+  transition: transform .15s ease, filter .2s ease, box-shadow .2s ease;
+}
+
+:host ::ng-deep .btn-primary-solid .p-button:hover,
+:host ::ng-deep .p-button:not(.p-button-secondary):not(.p-button-text):not(.p-button-outlined):not(.p-button-contrast):not(.btn-whatsapp):hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--primary) 38%, transparent);
+}
+
+:host ::ng-deep .btn-primary-solid .p-button:active,
+:host ::ng-deep .p-button:not(.p-button-secondary):not(.p-button-text):not(.p-button-outlined):not(.p-button-contrast):not(.btn-whatsapp):active {
+  transform: translateY(0);
+  filter: brightness(0.98);
 }
 
 :host ::ng-deep .btn-secondary-glass .p-button,
@@ -20,6 +34,14 @@
   background: color-mix(in srgb, #ffffff 6%, transparent);
   border-color: color-mix(in srgb, #ffffff 28%, transparent);
   color: color-mix(in srgb, #ffffff 92%, var(--text-primary) 8%);
+  transition: background .2s ease, border-color .2s ease, transform .15s ease;
+}
+
+:host ::ng-deep .btn-secondary-glass .p-button:hover,
+:host ::ng-deep .p-button.p-button-secondary:hover {
+  background: color-mix(in srgb, #ffffff 14%, transparent);
+  border-color: color-mix(in srgb, #ffffff 40%, transparent);
+  transform: translateY(-1px);
 }
 
 :host ::ng-deep .p-button.btn-whatsapp {
