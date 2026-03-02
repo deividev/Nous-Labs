@@ -1,6 +1,9 @@
 .hero {
   padding: clamp(4rem, 8vw, 7rem) 0;
-  background: linear-gradient(120deg, color-mix(in srgb, var(--primary) 48%, #ffffff 4%), color-mix(in srgb, var(--secondary) 52%, #ffffff 4%));
+  background:
+    radial-gradient(circle at 12% 5%, color-mix(in srgb, var(--secondary) 35%, transparent) 0%, transparent 34%),
+    radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--primary) 32%, transparent) 0%, transparent 28%),
+    linear-gradient(135deg, #1a1033 0%, #3e2a73 35%, #6f49b9 70%, #b36ae6 100%);
   border-bottom: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
@@ -19,7 +22,7 @@ h1 {
 
 p {
   font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-  color: color-mix(in srgb, #fff 88%, transparent);
+  color: color-mix(in srgb, #fff 90%, transparent);
   margin: 0 auto var(--space-8);
   max-width: 46rem;
 }
