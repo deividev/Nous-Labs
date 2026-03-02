@@ -12,10 +12,12 @@ import { CONTACT_CONFIG, SERVICE_D_FAQ, SERVICES } from '../../config/marketing-
   selector: 'app-home-page',
   imports: [RouterLink, CardModule, ButtonModule, HeroComponent, ProcessStepsComponent, FaqAccordionComponent, WhatsappCtaComponent],
   templateUrl: './home.page.html',
+  styleUrl: './home.page.scss',
 })
 export class HomePage {
   readonly services = SERVICES;
   readonly faq = SERVICE_D_FAQ.slice(0, 3);
   readonly process = ['Diagnóstico', 'Implementación', 'Operación', 'Optimización'];
+  readonly heroStats = ['Angular 21', 'PrimeNG UI', 'Automatización IA', 'Setup en días'];
   readonly contactConfig = CONTACT_CONFIG;
 }

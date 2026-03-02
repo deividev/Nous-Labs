@@ -6,5 +6,13 @@
       <a [routerLink]="primaryRoute()"><p-button [label]="primaryLabel()" /></a>
       <a [routerLink]="secondaryRoute()"><p-button [label]="secondaryLabel()" severity="secondary" /></a>
     </div>
+
+    @if (stats().length) {
+      <div class="hero-stats">
+        @for (stat of stats(); track stat) {
+          <span class="stat-chip">{{ stat }}</span>
+        }
+      </div>
+    }
   </div>
 </section>
