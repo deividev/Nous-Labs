@@ -1,5 +1,52 @@
-.hero { padding: var(--space-16) 0; }
-.hero-inner { max-width: 800px; }
-h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: var(--leading-tight); margin: 0 0 var(--space-4); }
-p { font-size: var(--text-lg); color: var(--text-secondary, #4b5563); margin: 0 0 var(--space-8); }
-.hero-cta { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+.hero {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--primary) 48%, #ffffff 4%), color-mix(in srgb, var(--secondary) 52%, #ffffff 4%));
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.hero-inner {
+  max-width: 56rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  margin: 0 0 var(--space-4);
+  color: #fff;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  color: color-mix(in srgb, #fff 88%, transparent);
+  margin: 0 auto var(--space-8);
+  max-width: 46rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.stat-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, #fff 34%, transparent);
+  background: color-mix(in srgb, #111827 16%, transparent);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

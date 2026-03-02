@@ -15,4 +15,5 @@ export class HeroComponent {
   readonly primaryRoute = input('/servicios');
   readonly secondaryLabel = input('Solicitar diagnóstico');
   readonly secondaryRoute = input('/contacto');
+  readonly stats = input<string[]>([]);
 }
