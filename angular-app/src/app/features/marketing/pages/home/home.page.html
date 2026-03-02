@@ -1,13 +1,14 @@
 <app-hero
-  title="Build Amazing Sistemas con Nous Labs"
-  subtitle="Desarrollo de software + IA aplicada para que ejecutes más rápido, con menos caos operativo y más foco en resultados."
-  primaryLabel="Ver servicios"
+  title="Asistente IA Operativo Entry para poner orden en tu negocio"
+  subtitle="Ahora mismo estamos enfocados en una sola implementación: Servicio D-Entry. Rápido, claro y orientado a resultados desde la primera semana."
+  primaryLabel="Ver Servicio Entry"
+  primaryRoute="/servicios/asistente-ia-operativo"
   secondaryLabel="Reservar diagnóstico (20 min)"
   [stats]="heroStats"
 />
 
 <section class="container section-grid">
-  <h2>Qué hacemos</h2>
+  <h2>Servicio activo en esta fase</h2>
   <div class="cards-grid">
     @for (service of services; track service.title) {
       <p-card [header]="service.title"><p>{{ service.description }}</p></p-card>
