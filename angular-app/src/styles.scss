@@ -109,7 +109,10 @@ body {
     sans-serif
   );
   color: var(--text-primary, #1f2937);
-  background-color: var(--background, #ffffff);
+  background:
+    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--primary) 22%, transparent) 0%, transparent 35%),
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--secondary) 18%, transparent) 0%, transparent 30%),
+    var(--background, #ffffff);
   line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
 }
