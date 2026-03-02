@@ -15,12 +15,13 @@ import { SERVICES } from '../../config/marketing-content';
       secondaryLabel="Ver Servicio D"
       secondaryRoute="/servicios/asistente-ia-operativo"
     />
-    <section class="container cards-grid">
+    <section class="container cards-grid services-list">
       @for (service of services; track service.title) {
         <app-service-card [title]="service.title" [description]="service.description" [route]="service.route" />
       }
     </section>
   `,
+  styleUrl: './services.page.scss',
 })
 export class ServicesPage {
   readonly services = SERVICES;

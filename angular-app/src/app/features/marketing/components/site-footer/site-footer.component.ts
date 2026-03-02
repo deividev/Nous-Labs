@@ -17,8 +17,19 @@ import { RouterLink } from '@angular/router';
     </footer>
   `,
   styles: `
-    .site-footer { border-top: 1px solid var(--border-color, #e5e7eb); margin-top: var(--space-16); }
-    .footer-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); color: var(--text-secondary, #4b5563); }
+    .site-footer {
+      border-top: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+      margin-top: var(--space-16);
+      background: color-mix(in srgb, #0b1020 92%, transparent);
+    }
+    .footer-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      color: color-mix(in srgb, #ffffff 82%, var(--text-primary) 18%);
+    }
     .links { display: flex; gap: var(--space-4); }
     .links a { color: inherit; text-decoration: none; }
   `,

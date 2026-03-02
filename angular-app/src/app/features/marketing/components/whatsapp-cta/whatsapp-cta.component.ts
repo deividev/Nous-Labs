@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
   imports: [ButtonModule],
   template: `
     <a [href]="link()" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
-      <p-button [label]="label()" icon="pi pi-whatsapp" styleClass="btn-primary-solid" />
+      <p-button [label]="label()" icon="pi pi-whatsapp" styleClass="btn-whatsapp" />
     </a>
   `,
   styles: `

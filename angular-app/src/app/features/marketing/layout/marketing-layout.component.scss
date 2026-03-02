@@ -17,15 +17,30 @@
 
 :host ::ng-deep .btn-secondary-glass .p-button,
 :host ::ng-deep .p-button.p-button-secondary {
-  background: color-mix(in srgb, #ffffff 10%, transparent);
-  border-color: color-mix(in srgb, #ffffff 35%, transparent);
+  background: color-mix(in srgb, #ffffff 6%, transparent);
+  border-color: color-mix(in srgb, #ffffff 28%, transparent);
   color: color-mix(in srgb, #ffffff 92%, var(--text-primary) 8%);
 }
 
+:host ::ng-deep .btn-whatsapp .p-button {
+  background: #25d366;
+  border-color: #25d366;
+  color: #0b2513;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+}
+
 :host ::ng-deep .p-card {
-  background: color-mix(in srgb, var(--surface) 86%, #0f172a 14%);
-  border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent);
+  background: color-mix(in srgb, var(--surface) 94%, #0b1020 6%);
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+:host ::ng-deep .p-card .p-card-title,
+:host ::ng-deep .p-card .p-card-subtitle,
+:host ::ng-deep .p-card .p-card-content,
+:host ::ng-deep .p-card p,
+:host ::ng-deep .p-card li {
+  color: var(--text-primary);
 }
 
 :host ::ng-deep .p-accordionpanel,
