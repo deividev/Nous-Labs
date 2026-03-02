@@ -3,8 +3,8 @@
     <h1>{{ title() }}</h1>
     <p>{{ subtitle() }}</p>
     <div class="hero-cta">
-      <a [routerLink]="primaryRoute()"><p-button [label]="primaryLabel()" /></a>
-      <a [routerLink]="secondaryRoute()"><p-button [label]="secondaryLabel()" severity="secondary" /></a>
+      <a [routerLink]="primaryRoute()"><p-button [label]="primaryLabel()" styleClass="btn-primary-solid" /></a>
+      <a [routerLink]="secondaryRoute()"><p-button [label]="secondaryLabel()" severity="secondary" styleClass="btn-secondary-glass" /></a>
     </div>
 
     @if (stats().length) {
