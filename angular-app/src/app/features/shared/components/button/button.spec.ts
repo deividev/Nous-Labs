@@ -47,6 +47,18 @@ describe('Button', () => {
       fixture.detectChanges();
       expect(component.size()).toBe('large');
     });
+
+    it('should support outline + small variants and ariaLabel', () => {
+      fixture.componentRef.setInput('variant', 'outline');
+      fixture.componentRef.setInput('size', 'small');
+      fixture.componentRef.setInput('ariaLabel', 'custom-btn');
+      fixture.detectChanges();
+
+      const button = fixture.nativeElement.querySelector('button');
+      expect(component.variant()).toBe('outline');
+      expect(component.size()).toBe('small');
+      expect(button.getAttribute('aria-label')).toBe('custom-btn');
+    });
   });
 
   describe('Outputs', () => {

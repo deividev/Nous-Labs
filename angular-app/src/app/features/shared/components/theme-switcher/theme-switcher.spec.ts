@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { describe, expect, it, vi } from 'vitest';
 import { ThemeSwitcher } from './theme-switcher';
 import { ThemeService } from '../../../../core/services';
 
@@ -36,7 +37,6 @@ describe('ThemeSwitcher', () => {
 
   describe('Theme Operations', () => {
     it('should change theme when setTheme is called', () => {
-      const initialTheme = themeService.currentTheme();
       themeService.setTheme('blue');
       expect(themeService.currentTheme()).toBe('blue');
     });
@@ -46,6 +46,12 @@ describe('ThemeSwitcher', () => {
       themeService.toggleDarkMode();
       const newMode = themeService.currentConfig().mode;
       expect(newMode).not.toBe(initialMode);
+    });
+
+    it('should expose theme preview helper', () => {
+      const preview = (component as any).getThemePreview('blue');
+      expect(typeof preview).toBe('string');
+      expect(preview.length).toBeGreaterThan(0);
     });
   });
 
@@ -63,6 +69,22 @@ describe('ThemeSwitcher', () => {
     it('should render theme categories', () => {
       const element = fixture.nativeElement;
       expect(element.querySelector('.theme-categories')).toBeTruthy();
+    });
+
+    it('should trigger dark toggle and theme button click handlers', () => {
+      const toggleSpy = vi.spyOn(themeService, 'toggleDarkMode');
+      const setThemeSpy = vi.spyOn(themeService, 'setTheme');
+
+      const element = fixture.nativeElement as HTMLElement;
+      (element.querySelector('.dark-toggle') as HTMLButtonElement).click();
+      fixture.detectChanges();
+
+      const themeButtons = element.querySelectorAll('.theme-btn');
+      expect(themeButtons.length).toBeGreaterThan(0);
+      (themeButtons[0] as HTMLButtonElement).click();
+
+      expect(toggleSpy).toHaveBeenCalled();
+      expect(setThemeSpy).toHaveBeenCalled();
     });
   });
 });

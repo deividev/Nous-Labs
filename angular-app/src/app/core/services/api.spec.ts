@@ -79,6 +79,22 @@ describe('ApiService', () => {
       message: 'server-msg',
     });
 
+    const postErr = new HttpErrorResponse({ status: 500, statusText: 'Server Error', url: '/p' });
+    (http.post as any).mockReturnValueOnce(throwError(() => postErr));
+    await expect(firstValueFrom(service.post('/p', {}))).rejects.toMatchObject({ status: 500 });
+
+    const putErr = new HttpErrorResponse({ status: 500, statusText: 'Server Error', url: '/u' });
+    (http.put as any).mockReturnValueOnce(throwError(() => putErr));
+    await expect(firstValueFrom(service.put('/u', {}))).rejects.toMatchObject({ status: 500 });
+
+    const patchErr = new HttpErrorResponse({ status: 500, statusText: 'Server Error', url: '/pa' });
+    (http.patch as any).mockReturnValueOnce(throwError(() => patchErr));
+    await expect(firstValueFrom(service.patch('/pa', {}))).rejects.toMatchObject({ status: 500 });
+
+    const deleteErr = new HttpErrorResponse({ status: 500, statusText: 'Server Error', url: '/d' });
+    (http.delete as any).mockReturnValueOnce(throwError(() => deleteErr));
+    await expect(firstValueFrom(service.delete('/d'))).rejects.toMatchObject({ status: 500 });
+
     expect((logger as any).error).toHaveBeenCalled();
   });
 });

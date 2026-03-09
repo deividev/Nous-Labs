@@ -88,4 +88,13 @@ describe('auth/guest/role guards', () => {
     expect(loggerMock.warn).toHaveBeenCalled();
     expect(result).toEqual({ segments: ['/unauthorized'] });
   });
+
+  it('roleGuard redirects when user data is missing', () => {
+    const guard = roleGuard(['admin']);
+    (storageMock.get as any).mockReturnValue(null);
+
+    const result = TestBed.runInInjectionContext(() => guard({} as any, {} as any));
+
+    expect(result).toEqual({ segments: ['/unauthorized'] });
+  });
 });

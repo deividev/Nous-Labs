@@ -214,6 +214,11 @@ describe('Landing', () => {
         cb({ dataset: { label: 'Team' }, parsed: { y: 8 }, formattedValue: '8', raw: 8 }),
       ).toContain('members');
 
+      (component as any).changeDataset('projects');
+      expect(
+        cb({ dataset: { label: 'Projects' }, parsed: { y: 3 }, formattedValue: '3', raw: 3 }),
+      ).toContain('projects');
+
       (component as any).changeChartType('bubble');
       expect(
         cb({ dataset: { label: 'Bubble' }, raw: { x: 1, y: 2, r: 3 } }),
@@ -225,10 +230,31 @@ describe('Landing', () => {
       ).toContain('(x: 1, y: 2)');
     });
 
-    it('chart options onClick updates selection and supports pie scales undefined', () => {
+    it('chartData switch covers hours and team for non-radial types', () => {
+      (component as any).changeChartType('bar');
+      (component as any).changeDataset('hours');
+      const hoursData = (component as any).chartData();
+      expect(hoursData.datasets[0].label).toContain('Development Hours');
+
+      (component as any).changeDataset('team');
+      const teamData = (component as any).chartData();
+      expect(teamData.datasets[0].label).toContain('Team Members');
+    });
+
+    it('chart options onClick updates selection for bar/bubble/scatter and supports pie scales undefined', () => {
       const optionsBar = (component as any).chartOptions();
       optionsBar.onClick({}, [{ datasetIndex: 0, index: 0 }]);
       expect((component as any).selectedDataPoint()).toBeTruthy();
+
+      (component as any).changeChartType('bubble');
+      const optionsBubble = (component as any).chartOptions();
+      optionsBubble.onClick({}, [{ datasetIndex: 0, index: 0 }]);
+      expect((component as any).selectedDataPoint()).toContain('size');
+
+      (component as any).changeChartType('scatter');
+      const optionsScatter = (component as any).chartOptions();
+      optionsScatter.onClick({}, [{ datasetIndex: 0, index: 0 }]);
+      expect((component as any).selectedDataPoint()).toContain('(x:');
 
       (component as any).changeChartType('doughnut');
       const optionsDoughnut = (component as any).chartOptions();

@@ -44,11 +44,14 @@ describe('StorageService', () => {
     expect(service.getSession('k')).toBeNull();
   });
 
-  it('expires items and clears only prefixed keys', () => {
+  it('expires items, supports raw parsed value, and clears only prefixed keys', () => {
     service.set('exp', 'v', { expiresIn: 1 });
     const nowSpy = vi.spyOn(Date, 'now').mockReturnValue(Date.now() + 10);
 
     expect(service.get('exp')).toBeNull();
+
+    localStorage.setItem('app_raw', JSON.stringify({ hello: 'world' }));
+    expect(service.get<any>('raw')).toEqual({ hello: 'world' });
 
     localStorage.setItem('other_key', 'x');
     service.set('a', 1);
